@@ -1,4 +1,6 @@
 .carousel {
+    display: flex;
+
     max-width: 100%;
     height: $carousel-height;
 
@@ -8,20 +10,20 @@
 .slide {
     display: flex;
 
+    height: $carousel-height;
+
     animation: slideshow 10s linear infinite;
 
     align-items: center;
 
-    &__link {
-        display: block;
-
-        height: $carousel-height;
-        margin: 0 15px;
+    &__image {
+        width: auto;
+        height: calc(100% - 30px);
+        margin: 0 30px;
     }
 
-    &__image {
-        max-height: 100%;
-        padding: 15px;
+    &--stop {
+        animation: none;
     }
 }
 
@@ -33,4 +35,4 @@
     100% {
         transform: translateX(-100%);
     }
-}
+}
