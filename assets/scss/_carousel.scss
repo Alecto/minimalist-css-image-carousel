@@ -1,11 +1,42 @@
+%after-before-element {
+    position: absolute;
+    z-index: 1;
+
+    width: $carousel-height * 2;
+    height: $carousel-height;
+
+    content: "";
+
+    background: linear-gradient(to right, #ffffff 0%, rgba(#ffffff, 0) 100%);
+}
+
 .carousel {
+    position: relative;
+
     display: flex;
+    overflow: hidden;
 
     max-width: 100%;
     height: $carousel-height;
 
     background-color: #ffffff;
-    overflow: hidden;
+    box-shadow: 0 10px 20px -10px rgba(#000000, 0.2);
+
+    &::before {
+        top: 0;
+        left: 0;
+
+        @extend %after-before-element;
+    }
+
+    &::after {
+        top: 0;
+        right: 0;
+
+        transform: rotateZ(180deg);
+
+        @extend %after-before-element;
+    }
 }
 
 .slide {
@@ -13,14 +44,14 @@
 
     height: $carousel-height;
 
-    animation: slideshow 10s linear infinite;
+    animation: slideshow $animation-time linear infinite;
 
     align-items: center;
 
     &__image {
         width: auto;
-        height: calc(100% - 30px);
-        margin: 0 30px;
+        height: calc(100% - #{$gap-size});
+        margin: 0 $gap-size;
     }
 
     &--stop {

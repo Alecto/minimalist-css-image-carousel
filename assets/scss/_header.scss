@@ -1,7 +1,7 @@
 .header {
     display: flex;
 
-    min-height: 100px;
+    min-height: $carousel-height;
 
     background-color: #cccccc;
 
@@ -10,4 +10,4 @@
 
     justify-content: center;
     align-items: center;
-}
+}
