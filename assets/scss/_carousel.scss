@@ -1,0 +1,36 @@
+.carousel {
+    max-width: 100%;
+    height: $carousel-height;
+
+    background-color: #ffffff;
+}
+
+.slide {
+    display: flex;
+
+    animation: slideshow 10s linear infinite;
+
+    align-items: center;
+
+    &__link {
+        display: block;
+
+        height: $carousel-height;
+        margin: 0 15px;
+    }
+
+    &__image {
+        max-height: 100%;
+        padding: 15px;
+    }
+}
+
+@keyframes slideshow {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

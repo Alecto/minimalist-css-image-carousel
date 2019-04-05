@@ -3,6 +3,24 @@
 }
 
 html {
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
 }
+
+body {
+    background-color: #e8e8e8;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    display: flex;
+
+    max-width: 992px;
+    min-height: calc(100vh - 100px);
+    margin: 0 auto;
+
+    align-items: center;
+}
