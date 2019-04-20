@@ -1,70 +1,66 @@
 %after-before-element {
-    position: absolute;
-    z-index: 1;
+  position: absolute;
+  z-index: 1;
 
-    width: $carousel-height * 2;
-    height: $carousel-height;
+  width: $carousel-height * 2;
+  height: $carousel-height;
 
-    content: "";
+  content: "";
 
-    background: linear-gradient(to right, #ffffff 0%, rgba(#ffffff, 0) 100%);
+  background: linear-gradient(to right, #ffffff 0%, rgba(#ffffff, 0) 100%);
 }
 
 .carousel {
-    position: relative;
+  position: relative;
 
-    display: flex;
-    overflow: hidden;
+  display: flex;
+  overflow: hidden;
 
-    max-width: 100%;
-    height: $carousel-height;
+  max-width: 100%;
+  height: $carousel-height;
 
-    background-color: #ffffff;
-    box-shadow: 0 10px 20px -10px rgba(#000000, 0.2);
+  background-color: #ffffff;
+  box-shadow: 0 10px 20px -10px rgba(#000000, 0.2);
 
-    &::before {
-        top: 0;
-        left: 0;
+  &::before {
+    top: 0;
+    left: 0;
 
-        @extend %after-before-element;
-    }
+    @extend %after-before-element;
+  }
 
-    &::after {
-        top: 0;
-        right: 0;
+  &::after {
+    top: 0;
+    right: 0;
 
-        transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
 
-        @extend %after-before-element;
-    }
+    @extend %after-before-element;
+  }
 }
 
 .slide {
-    display: flex;
+  display: flex;
 
-    height: $carousel-height;
+  height: $carousel-height;
 
-    animation: slideshow $animation-time linear infinite;
+  animation: slideshow $animation-time linear infinite;
 
-    align-items: center;
+  align-items: center;
 
-    &__image {
-        width: auto;
-        height: calc(100% - #{$gap-size});
-        margin: 0 $gap-size;
-    }
-
-    &--stop {
-        animation: none;
-    }
+  &__image {
+    width: auto;
+    height: calc(100% - #{$gap-size});
+    margin: 0 $gap-size;
+  }
 }
 
 @keyframes slideshow {
-    0% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    100% {
-        transform: translateX(-100%);
-    }
-}
+  100% {
+    transform: translateX(-100%);
+  }
+}
