@@ -230,20 +230,24 @@ a {
   top: 0;
 
   width: 200px;
-  height: 100px;
+  height: 100%;
 
   content: "";
 
-  background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .slide {
   display: flex;
   align-items: center;
 
-  height: 100px;
+  height: inherit;
 
-  animation: slideshow 20s linear infinite;
+  animation: slideshow 30s linear infinite;
 }
 
 .slide__image {
